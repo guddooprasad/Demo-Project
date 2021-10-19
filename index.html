@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Registration form</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <form name="registration" action="index2.html" class="registration-form" id="registrationid" autocomplete="off"  onsubmit=" return submitForm()">
+      <h2 style="text-align: center; color: #6c2727;">PROPERTY SEARCH</h2>
+   
+      <label for="property" id="property"> PROPERTY &#160;
+        <input type="radio" onclick="yesnoCheck();"  name="Resident" id="resident">RESIDENT
+        <input type="radio" onclick="yesnoCheck();" name="Resident" id="commercial">COMMERCIAL
+      </label>
+      <br>
+      <span id="propertyErrorMessage" style="color: red; "></span>
+      <br>
+       <!-- <p id residentshow></p> -->
+
+      <span class="ResidentialSelection" id="residentialselection" style="display: none">
+        <label for="you want">YOU WANT TO&#160;
+          <input type="radio" name="you want" id="buyr" onclick="hideErrorMessageYouWantTo()">BUY
+          <input type="radio" name="you want" id="rent" onclick="hideErrorMessageYouWantTo()">RENT
+          <input type="radio" name="you want" id="pg" onclick="hideErrorMessageYouWantTo()">PG
+           <!-- error message -->
+           <br>
+           <span id="youWantToPropertyErrorMessage" style="color: red; "></span>
+          
+        </label>
+        <br>
+        <label for="poperty type" id="property type">PROPERTY TYPE
+          <select name="Property Type" id="propertyResidential" onchange="removeErrorMessagePropertyType()">
+            <option value="-1" selected>select..</option>
+            <option value="Appartment">APPARTMENT</option>
+            <option value="Villa">INDEPENDENT HOUSE/VILLA</option>
+            <option value="Farm">FARM HOUSE</option>
+            <option value="Builder">INDEPENDENT/BULIDER FLOOR</option>
+          </select>
+        </label>
+        <br>
+        <span id="residentialPropertyTypeErrorMessage" style="color: red;"></span>
+      </span>
+
+
+      <span id="commercialselection" style="display: none">
+        <label for="you want">YOU WANT &#160;
+          <input type="radio" name="you want" id="buyc" onclick="hideErrorMessageYouWant()">BUY
+          <input type="radio" name="you want" id="lease" onclick="hideErrorMessageYouWant()">LEASE
+          <!-- Error Message -->
+          <br>
+          <span id="youWantPropertyErrorMessage" style="color: red; "></span>  
+          <!-- <br> -->
+        </label>
+        <br>
+        <label for="Property type" id="propertytype"> PROPERTY TYPE &#160;
+          <select name="Property Type" id="propertyType" onchange="removeErrorMessagePropertyType()">
+            <option value="-1" selected>select..</option>
+            <option value="Land">LAND</option>
+            <option value="Storage">STORAGE</option>
+            <option value="Hospitality">HOSPITALITY</option>
+            <option value="Shops">RETAIL SHOPS/SHOWROOMS</option>
+            <option value="Rtmos">READY TO MOVE OFFICE SPACE </option>
+            <option value="Bare shell space">BARE SHELL OFFICE SPACE</option>
+            <option value="co working space">CO-WORKING OFFICE SPACE</option>
+            <option value="Retail shops">RETAIL SHOPS/SHOWROOMS</option>
+            <option value="Commercial land">COMMERCIAL LAND/INSTLAND</option>
+          </select>
+
+        </label>
+        <br>
+        <span id="commercialPropertyTypeErrorMessage" style="color: red;"></span>
+
+      </span>
+      
+     
+      <br>
+      <label for="city">CITY
+        <select name="City" id="city" onchange="checkCitySelected()">
+          <option value="-1" selected>select..</option>
+          <option value="New Delhi">NEW DELHI</option>
+          <option value="Mumbai">MUMBAI</option>
+          <option value="Goa">GOA</option>
+          <option value="Patna">PATNA</option>
+        </select>
+
+      </label>
+      <br>
+      <span id="cityErrorMessage" style="color: red;"></span>
+
+      <br>
+      <label for="you need"> YOU NEED &#160;
+        <input type="radio" onclick="yesnoCheck1();" name="Furnished" id="furnished">FURNISHED
+        <input type="radio" onclick="yesnoCheck1();" name="Furnished" id="unfurnished">UNFURNISHED
+      </label>
+      <br>
+      <span id="youNeedErrorMessage" style="color: red;"></span>
+
+      <!-- Implement checkbox -->
+
+      <!-- <div class="multiselect" id="multiselect" >
+             <div class="selectBox" onclick="showCheckboxes()">
+              <select>
+                <option>Select an option</option>
+              </select>
+              <div class="overSelect"></div>
+             </div>
+             <div id="checkboxes">
+              <label for="one">
+                <input type="checkbox" id="one" />First checkbox</label>
+              <label for="two">
+                <input type="checkbox" id="two" />Second checkbox</label>
+              <label for="three">
+                <input type="checkbox" id="three" />Third checkbox</label>
+             </div>
+          </div> -->
+      <br>
+
+      <span class="facilities" id="facilities" style="display: none;">
+
+        <span class="facility" id="facility">FACILITIES</span>
+        
+
+
+        <div id="list1" class="dropdown-check-list" tabindex="100">
+
+          <span class="anchor" id="dropdown">Select an option</span>
+          <ul class="items" id="checkboxes">
+            <li><input type="checkbox" id="checkbox1" value="RO"/>RO </li>
+            <li><input type="checkbox" id="checkbox2" value="Beds"/>Beds</li>
+            <li><input type="checkbox" id="checkbox3" value="Fans"/>Fans</li>
+            <li><input type="checkbox" id="checkbox4" value="Fridge"/>Fridge</li>
+            <li><input type="checkbox" id="checkbox5" value="AC"/>AC</li>
+            <li><input type="checkbox" id="checkbox6" value="Washing Machine"/>Washing Machine</li>
+
+          </ul>
+        </div>
+
+      
+
+      </span>
+
+      <!-- implement radio button ready to move or underconstruction     -->
+      <br>
+      <label for="you want"> YOU WANT &#160;
+        <input type="radio" onclick="yesnoCheck2();" name="readytomove" id="ready">READY TO MOVE
+        <input type="radio" onclick="yesnoCheck2();" name="readytomove" id="underconstruction">UNDER CONSTRUCTION
+
+      </label>
+      <br>
+      <span id="youWantErrorMessage" style="color: red;"></span>
+
+      <!-- implement Built in  -->
+      <span class="built" id="builtin" style="display: none" ;>
+        <br>
+        <label for="builtid" id="builtid">BUILT IN
+          <select name="builtid" id="builtInId" onchange="removeErrorMessageBuitPossession()">
+            <option value="-1" selected>select</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+
+
+
+
+          </select>
+
+        </label>
+        <br>
+        <span id="builtErrorMessage" style="color: red;"></span>
+
+      </span>
+
+      <!-- implement possession by -->
+      <div class="underconst" id="possessionby" style="display: none" ;>
+        <br>
+        <label for="possessionid" id="possessionid">POSSESSION BY
+          <select name="builtid" id="possessionById" onchange="removeErrorMessageBuitPossession()">
+            <option value="-1" selected>select</option>
+            <option value="2021">By 2021</option>
+            <option value="2022">By 2022</option>
+            <option value="2023">By 2023</option>
+            <option value="2024">By 2024</option>
+            <option value="2025">By 2025</option>
+            <option value="2026">By 2026</option>
+            <option value="2027">By 2027</option>
+            <option value="2028">By 2028</option>
+            <option value="2029">By 2029</option>
+            <option value="2030">By 2030</option>
+
+
+          </select>
+
+        </label>
+        <br>
+        <span id="possessionErrorMessage" style="color: red;"></span>
+      </div>
+      
+      <br>
+      <!-- implement personal details -->
+
+      <h2 style="margin-left: 30%; color: #6c2727;">Personal Details</h2>
+      <label for="full name">Full Name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&nbsp; &nbsp; </label>
+      <input type="text" name="Full name" id="fullname" placeholder="Enter your name" oninput="checkName(this.value)">
+      <br>
+      <span id="fullNameErrorMessage" style="color: red;"></span>
+      <br>  
+
+      <br>
+      <label for="Email">Email &#160;&#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;&nbsp;&nbsp;&nbsp;
+      </label>
+      <input type="text" name="Email" id="Emailid" placeholder="abcd@xyz.com" oninput="checkEmail(this.value)">
+      <br>
+      <span id="emailErrorMessage" style="color: red;"></span>
+      <br>
+
+
+      <br>
+      <label for="mobile">Mobile No.&#160; &#160; &#160; &#160; &#160; &nbsp;&nbsp; </label>
+      <input type="text" name="mobile" id="numberid" maxlength="10" placeholder="0000000000"
+        oninput="checkNumber(this.value)">
+        <br>
+      <span id="mobileErrorMessage" style="color: red;"></span>
+        <br>
+
+      <input class="but" type="submit" value="Submit" >
+      <br>
+      <input class="reset" type="reset" value="Reset" />
+
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+
+.facility{
+    display:flex
+}
+table, th, td {
+    border:2px solid rgb(58, 24, 24);
+    margin: auto;
+    margin-top: 100px;
+    
+    /* background-color: rgb(173, 95, 95); */
+    background: linear-gradient(
+        45deg, #817575, transparent);
+    /* background-color: transparent; */
+    
+  }
+.container{
+    /* display: inline-table; */
+    border: 2px solid black;
+    margin: auto;
+    height: 600px;
+    width: 800px;
+    /* margin-left: 350px;
+    margin-top: 90px; */
+    /* background-color: burlywood; */
+    background-image: url(image.jpg);
+    
+    background-size: 800px 600px;
+    align-items: center;
+   
+}
+#btn{
+    height: 28px;
+    background-color: #4a3026;
+    border: 2px solid rgb(58, 24, 24);
+    border-radius: 13px;
+    width: 200px;
+    margin-top: 28px;
+    margin-left: 54%;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
