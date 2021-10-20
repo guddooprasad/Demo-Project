@@ -76,11 +76,24 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
 	else checkList.classList.add('visible');
 };
 
-// console.log(checkList.getElementsByClassName('anchor')[0])
-// window.onclick = function(Event){
-	
-	
+//close dropdown menu when click outside
+// window.onclick = function (event) {
+//   if(!event.target.matches('.anchor')){
+// 	  var dd = document.getElementByClassId("list1")
+// 	  for(var i = 0;i<dd.length;i++)
+// 	  {
+// 		  var x = dd[i];
+//            if(x.classList.contains('visible')){
+// 			   x.classList.remove('visible')
+// 		   }
+// 	  }
+//   }
 // }
+
+
+
+
+
 
 
 
