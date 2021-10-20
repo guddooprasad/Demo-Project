@@ -12,7 +12,7 @@
 <body>
   <div class="container" id="container">
     <form name="registration" action="index2.html" class="registration-form" id="registrationid" autocomplete="off"  onsubmit=" return submitForm()">
-      <h2 style="text-align: center; color: #6c2727;">PROPERTY SEARCH</h2>
+      <h2 style="text-align: center; color: #fdb4b4; font-size: 26px;">PROPERTY SEARCH</h2>
    
       <label for="property" id="property"> PROPERTY &#160;
         <input type="radio" onclick="yesnoCheck();"  name="Resident" id="resident">RESIDENT
@@ -123,13 +123,17 @@
 
       <span class="facilities" id="facilities" style="display: none;">
 
+        <label id="showFacilitesErrorMessage" style="color: red;"></label> 
         <span class="facility" id="facility">FACILITIES</span>
+        
+
+
          
 
         <div id="list1" class="dropdown-check-list" tabindex="100">
          
           <span class="anchor" id="dropdown">Select an option</span>
-          <span id="showFacilitesErrorMessage" style="color: red;"></span> 
+          
           <ul class="items" id="checkboxes" onchange="RemoveErrorMessageSelectFacilities()">
             <li><input type="checkbox" id="checkbox1" value="RO"/>RO </li>
             <li><input type="checkbox" id="checkbox2" value="Beds"/>Beds</li>
@@ -140,7 +144,7 @@
 
           </ul>
         </div>
-
+ 
       
 
       </span>
@@ -213,7 +217,7 @@
       <br>
       <!-- implement personal details -->
 
-      <h2 style="margin-left: 30%; color: #6c2727;">Personal Details</h2>
+      <h2 style="margin-left: 30%; color: #fdb4b4;font-size: 26px;">Personal Details</h2>
       <label for="full name">Full Name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&nbsp; &nbsp; </label>
       <input type="text" name="Full name" id="fullname" placeholder="Enter your name" oninput="checkName(this.value)">
       <br>
