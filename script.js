@@ -76,6 +76,12 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
 	else checkList.classList.add('visible');
 };
 
+// console.log(checkList.getElementsByClassName('anchor')[0])
+// window.onclick = function(Event){
+	
+	
+// }
+
 
 
 //function for select you want (ready to move or unconstrution)
@@ -118,6 +124,14 @@ function removeErrorMessagePropertyType()
 	document.getElementById('commercialPropertyTypeErrorMessage').innerHTML='';
 
 }
+
+
+// Hide error message if facilites is selected in checkbox
+
+function RemoveErrorMessageSelectFacilities(){
+	document.getElementById('showFacilitesErrorMessage').innerHTML='';
+}
+
 
 
 //Hide error message if built in and possession by date is selected
@@ -206,7 +220,30 @@ const validateYouNeed = () => {
 	document.getElementById('youNeedErrorMessage').innerHTML = 'please select your choice';
 	return false;
 };
-//
+// validate facilities;
+const validateFacilities = () =>{
+	if(document.getElementById('furnished').checked)
+	{
+       if(!(document.getElementById('checkbox1').checked ||
+	      document.getElementById('checkbox2').checked ||
+		  document.getElementById('checkbox3').checked ||
+		  document.getElementById('checkbox4').checked ||
+		  document.getElementById('checkbox5').checked ||
+		  document.getElementById('checkbox6').checked )){
+             document.getElementById('showFacilitesErrorMessage').innerHTML = 'please select facility';
+			 return false;
+		  }
+	   
+	}
+	
+		document.getElementById('showFacilitesErrorMessage').innerHTML = '';
+		return true;
+	
+}
+
+
+
+
 
 
 const validateYouWant = () => {
@@ -341,8 +378,9 @@ function submitForm() {
 	const v5 = validateFullName();
 	const v6 = validateEmail();
 	const v7 = validateNumber();
+	const v8 = validateFacilities();
 	const checkDigit = checkMobileDigit();
-	if (!v1 || !v2 || !v3 || !v4 || !v5 || !v6 || !v7 || !checkDigit) return false;
+	if (!v1 || !v2 || !v3 || !v4 || !v5 || !v6 || !v7 || !checkDigit || !v8)  return false;
 
 	saveInStorage();
 
