@@ -124,13 +124,13 @@
       <span class="facilities" id="facilities" style="display: none;">
 
         <span class="facility" id="facility">FACILITIES</span>
-        
-
+         
 
         <div id="list1" class="dropdown-check-list" tabindex="100">
-
+         
           <span class="anchor" id="dropdown">Select an option</span>
-          <ul class="items" id="checkboxes">
+          <span id="showFacilitesErrorMessage" style="color: red;"></span> 
+          <ul class="items" id="checkboxes" onchange="RemoveErrorMessageSelectFacilities()">
             <li><input type="checkbox" id="checkbox1" value="RO"/>RO </li>
             <li><input type="checkbox" id="checkbox2" value="Beds"/>Beds</li>
             <li><input type="checkbox" id="checkbox3" value="Fans"/>Fans</li>
